@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">  
+    
+<!-- Mirrored from www.starplugins.com/killercarousel by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:20:42 GMT -->
+<head>
+               
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+        <!-- Include jQuery -->
+        <script type="text/javascript" src="sites/starplugins/js/jquery.js"></script>
+        <!-- Include KillerCarousel JavaScript -->
+        <script type="text/javascript" src="sites/starplugins/js/killercarousel/killercarousel3f56.js?v=11"></script>
+        <!-- Include KillerCarousel CSS -->
+        <link href="sites/starplugins/js/killercarousel/killercarousel7b30.css?v=4" type="text/css" rel="stylesheet" />
+        
+        <link rel="shortcut icon" type="image/x-icon" href="favicon30f4.ico?v=3">
+        
+        <!-- Include Cloud Zoom CSS -->
+        <link href="sites/starplugins/js/cloudzoom/cloudzoom7b30.css?v=4" type="text/css" rel="stylesheet" />
+        <!-- Include Cloud Zoom JavaScript -->
+        <script type="text/javascript" src="sites/starplugins/js/cloudzoom/cloudzoom5059.js?v=20"></script>
+        
+        <script type="text/javascript" src="sites/starplugins/js/thumbelina/thumbelina3860.js?v=1"></script>
+        
+        <link href="sites/starplugins/js/jetzoom/jetzoom30f4.css?v=3" type="text/css" rel="stylesheet" />
+        <!-- Include Jet Zoom JavaScript -->
+        <script type="text/javascript" src="sites/starplugins/js/jetzoom/jetzoom8e0e.js?v=8"></script>
+        <script type="text/javascript" src="sites/starplugins/js/starzoomae52.js?v=5"></script>
+        <link href="sites/starplugins/js/starzoom30f4.css?v=3" type="text/css" rel="stylesheet" />
+
+        
+        <script type="text/javascript" src="sites/starplugins/js/fancy/jquery.fancybox5e1f.js?v=2"></script>
+        <link rel="stylesheet" href="sites/starplugins/js/fancy/jquery.fancybox4c03.css??v=1" type="text/css" media="screen" />
+        
+                <link href="sites/starplugins/js/thumbelina/thumbelina.css" type="text/css" rel="stylesheet" />
+
+        
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="../netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="../netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="../netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+        
+
+        <!-- Various page styles. -->
+        <style type="text/css">
+            body {
+                font-size:16px;
+                font-family: "Arvo","georgia",serif;
+                background-color:#333;
+                height:100%;
+                
+            }
+            
+            .band-color-1 a, .band-color-2 a, .band-color-3 a, .band-color-4 a  {
+                color:#ccccff;
+               
+            }
+            strong {
+                font-weight:700;
+            }
+            
+            .row {
+                padding-bottom:40px;
+            }
+            
+            .btn, label {
+                font-family: "Exo 2",sans-serif;
+            }
+            .navbar, login-nav {
+                font-family: "Exo 2",sans-serif; 
+            }
+   
+            
+            h1,h2,h3,h4,h5 {
+                font-weight:normal;
+                font-family: "Exo 2",sans-serif;
+                margin-bottom:20px;
+                margin-top:25px;
+            }
+            
+         
+            
+            h1,h2 {
+                text-shadow: -1px -1px 1px rgba(0,0,0,0.1);
+                border-radius: 3px;
+                color:rgba(0,0,0,0.75);
+                font-weight:400;
+            }
+           
+            
+            h3, h3 small {
+                font-family: "Arvo",serif;
+                color:rgba(0,0,0,0.75);
+                text-shadow:none;
+            }
+          
+            
+            h4 {
+                font-family: "Arvo",serif;
+                color:rgba(0,0,0,0.75);
+                 text-shadow:none;
+            }
+            #footer, #footer a {
+               color:#fff;
+               text-align: center;
+               font-size: 14px;
+               height:100%;
+               padding-top:15px;
+               padding-bottom:15px;
+            }
+/*  http://css-tricks.com/responsive-data-tables/ 
+  Look to implement this at some point.
+
+*/
+ .props-table {
+        border-collapse: collapse;
+        color:#444;
+        font-size:14px;    
+        background-color:#f5f5f5
+    }
+    .props-table th {
+        text-align: center;
+        padding:5px;
+    }
+    .props-table td {
+      
+        padding:5px;      
+    }
+    
+    .props-table td,.props-table td+td+td+td {
+        font-family: "Courier New",monospace;
+        text-align: center;
+    }
+    .props-table td+td+td  {
+        font-family: arial, sans-serif;
+        text-align: left;
+    }
+
+/* general spacer to place between stacked images etc. */
+.gen-spacer {
+    margin-top:25px;
+    margin-bottom:25px;
+    display:block;
+}
+
+/* prices in checkout */
+.price {
+   
+    float:right;
+    font-size:20px;
+}
+
+.text-danger {
+    font-family: "Exo 2", sans-serif;
+    font-weight:bold;
+    font-size:16px;
+    color: #aa4444;
+}
+
+/* stops stretching of paypal/wallet buttons */
+[type=image] {
+    padding:0px;
+    border:none;
+    width:auto;
+   height:auto;
+   background:none;
+}
+
+/* bolds selected item in checkout */
+input:checked + label {
+    font-weight:bold;
+}
+
+
+ .band-color-2 a {
+     color:darkblue;
+   
+ }
+ .band-color-2 .btn {
+     color:#fff;
+     
+ }
+
+/* Syle for download product boxes.*/
+.band-color-2 .well {
+      color:#000;
+    font-size:16px;
+    line-height: 22px;
+}
+
+/* reddish */             
+.band-color-1 {
+     background-color:#D74B4B;
+      color:#fff;
+    padding-top:20px;
+ }
+ /* orangey */
+.band-color-2 {
+     background-color:#D8914B;
+     color:#fff;
+     padding-top:20px;
+ }
+
+
+/* Dark purple */
+.band-color-3 {
+    background-color:#914BD8;color:#fff;
+    padding-top:20px;
+}
+/* pinkish */
+.band-color-4 {
+
+    background-color:#E37D7D;color:#fff;
+    padding-top:20px;
+}
+
+.band-color-5 {
+    background-color:#fff;color:#444;
+    padding-top:20px;
+}
+
+.band-color-6 {
+    padding-top:20px;
+    color:#fff;
+    background-color:#eeb0b0;
+}
+.download-box {
+    color:#000;
+    font-size:14px;
+ }
+ ul li {
+     font-size:15px;
+     margin-bottom:5px;
+ }
+
+/*750px	970px	1170px*/
+/* Large devices (large desktops, 1200px and up) */
+/*@media (min-width: 1170px) { body {font-size:18px;}  }*/
+
+           
+            #footer a {
+                text-decoration: underline;
+                color:#fff;
+            }
+            #footer a:hover {
+                color:#ccc;
+            }
+            #footer .container {
+                background-color:transparent;
+                font-family:'Exo 2';
+            }
+            .login-nav a{
+                color:#aaa;
+                font-size: 14px;
+            }
+            .login-nav a:hover {
+                color:#fff;
+                text-decoration: none;
+            }
+            
+            .login-nav a.btn {
+                color:#fff;
+            }
+            
+            .navbar {
+                border-radius:0;
+                margin-bottom: 0px;
+            }
+            
+            .mainnav {
+                padding-bottom:0px;
+                font-family: "Exo 2";
+            }
+            .mainnav a {
+             padding:10px;   
+             padding-top:0px;
+             display:block;
+            }
+            
+            .mainnav a.first {
+                padding-left:0px;
+            }
+            
+            .logo-area {
+                padding-bottom:0px;
+                padding-top:10px;
+                font-family: "Exo 2";
+            }
+            
+            .revision {
+                font-size:14px;
+                margin-top:-15px;
+            }
+            .well a {
+                text-decoration: underline;
+            }
+ 
+ /* little adjusment to suit our font better */
+ .glyphicon {
+     top:3px;
+ }
+ .twitter-logo {
+     margin-top:-3px;
+ }
+
+        </style>
+        
+
+<script type = "text/javascript">
+    $(function() {
+        $('.kc-wrap').KillerCarousel({
+            // Width of carousel.
+            width: 800,
+            // Item spacing in 3d (CSS3 3d) mode.
+            spacing3d: 120,
+            // Item spacing in 2d (no CSS3 3d) mode. 
+            spacing2d: 120,
+            // Path to images for shadows etc.
+            imagePath: "killercarousel/",
+            showShadow: true,
+            showReflection: true,
+            // Looping mode.
+            infiniteLoop: true,
+            // Scale at 75% of parent element.
+            autoScale: 85
+
+        });
+
+        var kc = $('.kc-wrap').data('KillerCarousel');
+        var dir = 0;
+        setInterval(function() {
+            kc.position(kc.position() + dir * 50);
+        }, 100)
+        $(window).bind('mouseup touchend', function() {
+            dir = 0;
+            kc.lineUp();
+        })
+        $('.nav-but-left,.nav-but-right').bind('mousedown touchstart', function(evt) {
+            // console.log(evt.type + " "+Date.now());
+            dir = -1;
+            if ($(this).hasClass('nav-but-left'))
+           {   dir = 1;}
+            evt.preventDefault();
+            return false;
+        })
+
+    });
+</script>
+
+<style>
+    .kc-wrapx {
+        top:-15px;
+        background-position: center 45%;
+        clear:both;
+    }
+
+
+
+    /* CSS for item wrapper */
+    .kc-item {
+        position:absolute;              
+        width:188px;
+        height:250px;
+    }
+
+    /* CSS for images inside item wrapper */
+    .kc-item img {
+        position:absolute;
+        pointer-events: none;   /* Make images non-selectable. */
+        width:100%;             /* Make images expand to wrapper size (used in 2d modes). */
+    }
+
+    #nav-buts {
+        position:absolute;
+        bottom:10px;
+        right:10px;
+    }
+
+    .nav-but-left,.nav-but-right {
+        font-family: arial;
+        width:32px;
+        height:28px;
+        border:2px solid #ccc;
+        background-color: #444;
+        border-radius: 5px;
+        text-align:center;
+        float:left;
+        color:#fff;
+        font-size: 16px;
+        margin-right:10px;
+        padding-top:0px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+        cursor: pointer;
+    }
+    .nav-but-left:hover,.nav-but-right:hover {
+        background-color:#666;
+    }
+
+
+
+
+
+#idiframe{
+
+position: absolute;
+top: 20%;
+left: 20%;
+width: 60%;
+height: 60%;
+
+}
+
+#dividiframe{
+
+    position: absolute;
+top: 0%;
+left: 0%;
+width: 100%;
+height: 100%;
+background-color: #000;
+z-index: 33;
+}
+
+
+#idbt1atras{
+
+
+    position: absolute;
+    top: 80%;
+    left: 40%;
+    width: 20%;
+    height: 55px;
+
+    background-color: #006fd6;
+    color: #000;
+    border-radius: 15px;
+}
+H1{
+
+position: absolute;
+top: 80%;
+left: 0%;
+width: 100%;
+text-align: center;
+color: #006fd6;
+
+}
+
+</style>
+        <script type="text/javascript">
+            
+        CloudZoom.quickStart(); // cz
+        JetZoom.quickStart();
+        StarZoom.quickStart();
+           
+            // The following piece of code can be ignored.
+            if (window.location.hostname.indexOf("starplugins.") != -1) {
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-254857-7']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            }
+             
+        </script>
+    </head>
+    <body>
+        
+       
+
+        <div class='row'>
+            <div class='col-sm-12'>
+             
+                <!---------------------------------------->
+
+                <div class = "kc-wrap">
+                    <!-- Carousel items follow -->
+                    <div id="id1" onclick="funtiocli(this);" class="kc-item" >
+                        <img src="kcimages/cropped-small/image1.jpg" alt = "Salvator Mundi 1519">
+                    </div>
+                    <div id="id3" onclick="funtiocli(this);" class="kc-item">
+                        <img src="kcimages/cropped-small/image2.jpg" alt = "St. John the Baptist 1516">
+                    </div> 
+                    <div id="id4" onclick="funtiocli(this);" class="kc-item">
+                        <img src="kcimages/cropped-small/image3.jpg" alt = "Lady with an Ermine 1490">
+                    </div>
+                    <div id="id5" onclick="funtiocli(this);" class="kc-item">
+                        <img src="kcimages/cropped-small/image4.jpg" alt = "St. Jerome in the Wilderness 1480">
+                    </div>
+                    <div id="id6" onclick="funtiocli(this);" class="kc-item">
+                        <img src="kcimages/cropped-small/image5.jpg" alt = "Head of a Woman 1508">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image6.jpg" alt = "St. John the Baptist 1516">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image7.jpg" alt = "The Virgin and Child with St Anne and St John the Baptist 1500">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image8.jpg" alt = "Madonna of the Yarnwinder 1507">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image9.jpg" alt = "The Virgin and Child with St. Anne 1508">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image10.jpg" alt = "Madonna of the Carnation 1480">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image11.jpg" alt = "La belle ferronnière 1496">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image12.jpg" alt = "Adoration of the Magi 1481">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image13.jpg" alt = "Portrait of a Musician 1490">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image14.jpg" alt = "Virgin of the Rocks 1486">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image15.jpg" alt = "Madonna of Laroque 1503">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image16.jpg" alt = "Benois Madonna 1478">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image17.jpg" alt = "Mona Lisa 1517">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image18.jpg" alt = "Portrait of a man in red chalk 1512">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image19.jpg" alt = "Ginevra de' Benci 1478">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image20.jpg" alt = "The Last Supper 1498">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image21.jpg" alt = "Annunciation 1475">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image22.jpg" alt = "The Battle of Anghiari 1505">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image23.jpg" alt = "Madonna Litta 1491">
+                    </div>
+
+                    <div onclick="alert(1234);" class="kc-item" >
+                        <img src="kcimages/cropped-small/image1.jpg" alt = "Salvator Mundi 1519">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image2.jpg" alt = "St. John the Baptist 1516">
+                    </div> 
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image3.jpg" alt = "Lady with an Ermine 1490">
+                    </div>
+                    <div class="kc-item">
+                        <img src="kcimages/cropped-small/image4.jpg" alt = "St. Jerome in the Wilderness 1480">
+                    </div>
+                    <div id="nav-buts">
+                        <div class="nav-but-left">&laquo;</div>
+                        <div class="nav-but-right">&raquo;</div>
+                    </div>
+
+                </div>
+
+             
+            </div>
+        </div>
+   <!---------------------------------------->
+         <!-- Go to www.addthis.com/dashboard to customize your tools -->
+
+         
+<h1>CURSOS DE GIOVANNI RODRIGUEZ DIAZ</h1>
+
+
+
+
+
+<div id="dividiframe">
+
+
+    <iframe id="idiframe" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<button onclick="iratras();" id="idbt1atras">clear</button>
+
+</div>
+
+<script>
+
+document.getElementById("dividiframe").style.display="none";
+
+function funtiocli(thiss){
+
+if(thiss.id=="id1"){
+    alert(thiss.id);
+    document.getElementById("dividiframe").style.display="block";
+    document.getElementById("idiframe").src = "https://youtu.be/DbpXsEoJFmA";}
+    if(thiss.id=="id2"){document.getElementById("dividiframe").style.display="block";
+    document.getElementById("idiframe").src = "https://www.youtube.com/watch?v=8XWwjtgmLys&t=132s";}
+
+    if(thiss.id=="id3"){document.getElementById("dividiframe").style.display="block";
+    document.getElementById("idiframe").src = "https://youtu.be/95dsw1ylbt8";}
+
+    if(thiss.id=="id4"){document.getElementById("dividiframe").style.display="block";
+    document.getElementById("idiframe").src = "https://wwf.org";}
+
+    if(thiss.id=="id5"){document.getElementById("dividiframe").style.display="block";
+    document.getElementById("idiframe").src = "https://wwf.org";}
+
+
+
+}
+
+function iratras(){
+document.getElementById("dividiframe").style.display="none";
+
+}
+
+</script>
+
+    </body>
+
+<!-- Mirrored from www.starplugins.com/killercarousel by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:24:08 GMT -->
+</html>
+

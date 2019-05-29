@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">  
+    
+<!-- Mirrored from www.starplugins.com/killercarousel/examples/navigation-buttons by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:27:32 GMT -->
+<head>
+        <title>Killer Carousel Navigation Buttons Example</title>
+       
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+        <!-- Include jQuery -->
+        <script type="text/javascript" src="../../sites/starplugins/js/jquery.js"></script>
+        <!-- Include KillerCarousel JavaScript -->
+        <script type="text/javascript" src="../../sites/starplugins/js/killercarousel/killercarouselb6f5.js?v=10"></script>
+        <!-- Include KillerCarousel CSS -->
+        <link href="../../sites/starplugins/js/killercarousel/killercarousel7b30.css?v=4" type="text/css" rel="stylesheet" />
+
+        
+        <!-- Various page styles. -->
+        <style type="text/css">
+           
+            body {
+                font-family: arial, sans-serif;
+                color: #444;
+                font-size: 16px;
+                padding:0px;
+                margin:0px;
+            }
+            
+            p {
+                line-height: 20px;
+            }
+            
+            code {
+                font-weight: bold;
+                color: #f44;;
+            }
+            a {
+                color:#3d8dde;
+            }
+            
+            #wrapper {
+                padding:10px;
+            }
+        </style>
+        
+        <!-- Styles for the Carousel -->
+        <style type = "text/css">
+
+            
+            /* CSS for item wrapper */
+            .kc-item {
+                position:absolute;              
+                width:188px;
+                height:250px;
+            }
+            
+            /* CSS for images inside item wrapper */
+            .kc-item img {
+                position:absolute;
+                pointer-events: none;   /* Make images non-selectable. */
+                width:100%;             /* Make images expand to wrapper size (used in 2d modes). */
+            }
+         
+          
+            #kc-2 .kc-nav-button {
+                clear:both;
+                margin-bottom: 5px;
+                width:10px;
+                height:10px;
+                background-color: #fc0;
+                border-radius:0px;
+            }
+            #kc-2 .kc-nav-button.last {
+                margin-bottom:0;
+            }
+            
+            #kc-2 .kc-nav-button.active {
+                background-color: #fff;
+            }
+            
+        </style>
+        
+        <script type = "text/javascript">
+            var props1 = {
+                    // Width of carousel.
+                    width: 800, 
+                    // Item spacing in 3d (CSS3 3d) mode.
+                    spacing3d: 120,    
+                    // Item spacing in 2d (no CSS3 3d) mode. 
+                    spacing2d:120,
+                    showShadow: true, 
+                    showReflection: true,
+                    // Looping mode.
+                    infiniteLoop: true,
+                    // Scale at 75% of parent element.
+                    autoScale: 75,
+                    showNavigation: true
+                    
+                };
+            
+            var props2 = $.extend({},props1, {navigationVerticalPos:'middle',navigationHorizontalPos:"left:20px"});
+            var props3 = $.extend({},props1, {navigationVerticalPos:'middle',navigationHorizontalPos:'middle',navigationParent:'#nav-par'});
+            var props4 = $.extend({},props1, {showNavigation:false});
+            
+            $(function() {
+                $('#kc-1').KillerCarousel(props1);
+                $('#kc-2').KillerCarousel(props2);
+                $('#kc-3').KillerCarousel(props3);
+                $('#kc-4').KillerCarousel(props4);
+                
+                $(function(){
+                    // Get instance of Killer Carousel.
+                    var kc = $('#kc-4').data('KillerCarousel');                    
+                    // Bind events to buttons.
+                    $('#forwards-button').click(function(){
+                        // Call api function to move forwards.
+                        kc.animateToRelativeItem(1);
+                    });
+                    $('#backwards-button').click(function(){
+                        // Call api function to move backwards.
+                        kc.animateToRelativeItem(-1);
+                    });
+                });
+            });
+    </script>
+        <script type="text/javascript">
+            
+             // The following piece of code can be ignored.
+             $(function(){
+                 $(window).resize(function() {
+                     $('#info').text("Page width: "+$(this).width());
+                 });
+                 $(window).trigger('resize');
+             });
+             
+            // The following piece of code can be ignored.
+            if (window.location.hostname.indexOf("starplugins.") != -1) {
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-254857-7']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            }
+             
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+        
+                 
+
+<h1>Killer Carousel Example: Navigation buttons</h1>
+<p><strong>Applies from version 1.1 rev 1311271343</strong></p>
+<p>These examples shows how you can implement navigation buttons with a carousel, in addition to the usual mouse, wheel or touch actions.</p>
+<p>By setting the <code>showNavigation:true</code> property, a default set of navigation buttons will appear in the bottom right.</p>
+<p>The buttons are styled via the <em>killercarousel.css</em> file, and styled using the following CSS classes:</p>
+<ul>
+    <li><code>.kc-nav-wrap</code> - a parent wrapper for the navigation buttons (typically, no need to change this)</li>
+    <li><code>.kc-nav-button, .kc-nav-button-active</code> - the buttons themselves</li>
+</ul>
+<p>In addition, the classes <code>.active</code> and <code>.last</code> will be applied to the appropriate buttons so you can style those states differently.</o>
+<h2>Positioning</h2>
+<p>The set of buttons is positioned using the <code>navigationHorizontalPos</code> and <code>navigationVerticalPos</code> properties.
+<p>Here are some examples</p>
+<ul>
+    <li>
+        <code>navigationVerticalPos:'bottom:15px', navigationHorizontalPos:'middle'</code> - 15 pixels from bottom in the middle
+    </li>
+    <li>
+        <code>navigationVerticalPos:'top:15px', navigationHorizontalPos:'right:15px'</code> - 15 pixels from top, 15 pixels from right edge
+    </li>
+    <li>
+        <code>navigationVerticalPos:'middle', navigationHorizontalPos:'middle'</code> - middle of carousel, unlikely to be useful
+    </li>
+
+</ul>
+
+
+<h2>Default Navigation Buttons</h2>
+<p>Default buttons appear near bottom-right, equivalent to:</p>
+<p>
+<code>navigationVerticalPos:'bottom:15px', navigationHorizontalPos:'right:15px'</code>
+</p>
+<div id="kc-1" class = "kc-wrap">
+    <!-- Carousel items follow -->
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image1.jpg" alt = "Salvator Mundi 1519">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image2.jpg" alt = "St. John the Baptist 1516">
+    </div> 
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image3.jpg" alt = "Lady with an Ermine 1490">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image4.jpg" alt = "St. Jerome in the Wilderness 1480">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image5.jpg" alt = "Head of a Woman 1508">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image6.jpg" alt = "St. John the Baptist 1516">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image7.jpg" alt = "The Virgin and Child with St Anne and St John the Baptist 1500">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image8.jpg" alt = "Madonna of the Yarnwinder 1507">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image9.jpg" alt = "The Virgin and Child with St. Anne 1508">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image10.jpg" alt = "Madonna of the Carnation 1480">
+    </div>
+</div>
+<h2>Vertical Navigation Buttons</h2>
+<p>This was created by simply overriding the CSS like this:</p>
+<pre>
+
+/* Make buttons square and yellow. */
+.kc-nav-button {
+    clear:both;
+    margin-bottom: 5px;
+    width:10px;
+    height:10px;
+    background-color: #fc0;
+    border-radius:0px;
+}
+
+/* No margin on last one. */
+.kc-nav-button.last {
+    margin-bottom:0;
+}
+
+/* White active button. */
+.kc-nav-button.active {
+    background-color: #fff;
+}    
+</pre>
+<div id="kc-2" class = "kc-wrap">
+    <!-- Carousel items follow -->
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image1.jpg" alt = "Salvator Mundi 1519">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image2.jpg" alt = "St. John the Baptist 1516">
+    </div> 
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image3.jpg" alt = "Lady with an Ermine 1490">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image4.jpg" alt = "St. Jerome in the Wilderness 1480">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image5.jpg" alt = "Head of a Woman 1508">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image6.jpg" alt = "St. John the Baptist 1516">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image7.jpg" alt = "The Virgin and Child with St Anne and St John the Baptist 1500">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image8.jpg" alt = "Madonna of the Yarnwinder 1507">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image9.jpg" alt = "The Virgin and Child with St. Anne 1508">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image10.jpg" alt = "Madonna of the Carnation 1480">
+    </div>
+</div>
+
+<h2>Navigation Parent</h2>
+<p>The default parent of the navigation buttons is the wrapping element used for the carousel (in these examples, the big rectangle with the grey background).</p>
+<p>You can specify a different parent by using the <code>navigationParent</code> property. This allows you to specify a selector to any element in the page to use as the parent.</p>
+<p>In this example, we've attached the navigation to an element that sits below the carousel wrapping element.</p>
+<div id="kc-3" class = "kc-wrap">
+    <!-- Carousel items follow -->
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image1.jpg" alt = "Salvator Mundi 1519">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image2.jpg" alt = "St. John the Baptist 1516">
+    </div> 
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image3.jpg" alt = "Lady with an Ermine 1490">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image4.jpg" alt = "St. Jerome in the Wilderness 1480">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image5.jpg" alt = "Head of a Woman 1508">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image6.jpg" alt = "St. John the Baptist 1516">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image7.jpg" alt = "The Virgin and Child with St Anne and St John the Baptist 1500">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image8.jpg" alt = "Madonna of the Yarnwinder 1507">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image9.jpg" alt = "The Virgin and Child with St. Anne 1508">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image10.jpg" alt = "Madonna of the Carnation 1480">
+    </div>
+</div>
+<div id='nav-par' style ='margin-top:5px;background-color:#fc0;border:1px solid #888;position:relative;height:40px;width:500px'></div>
+<h2>Forwards and Backwards Buttons</h2>
+<p>Forwards and backwards buttons can be easily implement using the API.</p>
+<p>In this example, we have wired up two buttons to work with the carousel using the following code:</p>
+<pre>
+$(function(){
+    // Get instance of Killer Carousel.
+    var kc = $('#kc-4').data('KillerCarousel');                    
+    // Bind events to buttons.
+    $('#forwards-button').click(function(){
+        // Call api function to move forwards.
+        kc.animateToRelativeItem(1);
+    });
+    $('#backwards-button').click(function(){
+        // Call api function to move backwards.
+        kc.animateToRelativeItem(-1);
+    });
+});
+</pre>
+<p>Try them:</p>
+
+<input type='button' id ='backwards-button' value='<<'>
+<input type='button' id ='forwards-button' value='>>'>
+<div id="kc-4" class = "kc-wrap">
+    <!-- Carousel items follow -->
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image1.jpg" alt = "Salvator Mundi 1519">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image2.jpg" alt = "St. John the Baptist 1516">
+    </div> 
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image3.jpg" alt = "Lady with an Ermine 1490">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image4.jpg" alt = "St. Jerome in the Wilderness 1480">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image5.jpg" alt = "Head of a Woman 1508">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image6.jpg" alt = "St. John the Baptist 1516">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image7.jpg" alt = "The Virgin and Child with St Anne and St John the Baptist 1500">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image8.jpg" alt = "Madonna of the Yarnwinder 1507">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image9.jpg" alt = "The Virgin and Child with St. Anne 1508">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image10.jpg" alt = "Madonna of the Carnation 1480">
+    </div>
+</div>
+
+
+
+        <p id="info">info</p>
+        <p>&COPY;2015 <a href="../../index.html">Star Plugins</a></p>
+        </div>
+        
+    </body>
+
+<!-- Mirrored from www.starplugins.com/killercarousel/examples/navigation-buttons by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:27:32 GMT -->
+</html>
+

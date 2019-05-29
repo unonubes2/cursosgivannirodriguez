@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">  
+    
+<!-- Mirrored from www.starplugins.com/killercarousel/tutorials/image-carousel by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:27:31 GMT -->
+<head>
+        <title>Killer Carousel Tutorial: Image carousel</title>
+       
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+        <!-- Include jQuery -->
+        <script type="text/javascript" src="../../sites/starplugins/js/jquery.js"></script>
+        <!-- Include KillerCarousel JavaScript -->
+        <script type="text/javascript" src="../../sites/starplugins/js/killercarousel/killercarouselb6f5.js?v=10"></script>
+        <!-- Include KillerCarousel CSS -->
+        <link href="../../sites/starplugins/js/killercarousel/killercarousel7b30.css?v=4" type="text/css" rel="stylesheet" />
+
+        
+        <!-- Various page styles. -->
+        <style type="text/css">
+           
+            body {
+                font-family: arial, sans-serif;
+                color: #444;
+                font-size: 16px;
+                padding:0px;
+                margin:0px;
+            }
+            
+            p {
+                line-height: 20px;
+            }
+            
+            code {
+                font-weight: bold;
+                color: #f44;;
+            }
+            a {
+                color:#3d8dde;
+            }
+            
+            #wrapper {
+                padding:10px;
+            }
+        </style>
+        
+        <link href="../../sites/starplugins/js/prettify/prettify.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="../../sites/starplugins/js/prettify/prettify.js"></script>
+
+
+        <!-- Styles for the Carousel -->
+        <style type = "text/css">
+            .kc-wrap {
+                height:330px;
+                padding:0;
+            }
+          
+            
+            /* CSS for images inside item wrapper */
+            .kc-item img {
+                position:absolute;
+                pointer-events: none;   /* Make images non-selectable. */
+                width:100%;             /* Make images expand to wrapper size. */
+            }
+            
+            pre {
+                font-size:14px;
+            }
+        </style>
+        
+        <script type = "text/javascript">
+            
+                $(function() {
+                    $(function(){
+                     $('pre').addClass('prettyprint'); // Add pretty print to pre elements.
+                     prettyPrint();
+                 });
+                
+                
+                
+                $('.kc-wrap').KillerCarousel({
+                    // Width of carousel.
+                    width: 800, 
+                    // Item spacing in 3D (modern browsers) modes.
+                    spacing3d: 120,    
+                    // Item spacing in 2D (old browsers) modes. 
+                    spacing2d: 120,
+                    showShadow:true,
+                    showReflection: true
+                });
+               
+                 
+            });
+    </script>
+        <script type="text/javascript">
+            
+             // The following piece of code can be ignored.
+             $(function(){
+                 $(window).resize(function() {
+                     $('#info').text("Page width: "+$(this).width());
+                 });
+                 $(window).trigger('resize');
+             });
+             
+            // The following piece of code can be ignored.
+            if (window.location.hostname.indexOf("starplugins.") != -1) {
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-254857-7']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            }
+             
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+        
+                 
+
+<h1>Killer Carousel Tutorial: Image carousel</h1>
+
+<!-- Main wrapping parent. -->
+<div class = "kc-wrap">
+    <!-- Carousel items follow. -->
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image1.jpg" alt = "Salvator Mundi 1519">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image2.jpg" alt = "St. John the Baptist 1516">
+    </div> 
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image3.jpg" alt = "Lady with an Ermine 1490">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image4.jpg" alt = "St. Jerome in the Wilderness 1480">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image5.jpg" alt = "Head of a Woman 1508">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image6.jpg" alt = "St. John the Baptist 1516">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image7.jpg" alt = "The Virgin and Child with St Anne and St John the Baptist 1500">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image8.jpg" alt = "Madonna of the Yarnwinder 1507">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image9.jpg" alt = "The Virgin and Child with St. Anne 1508">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image10.jpg" alt = "Madonna of the Carnation 1480">
+    </div>
+</div>
+<p>This tutorial demonstrates how to create a basic Killer Carousel image carousel.</p>
+<h2>Assumptions</h2>
+<p>The reader has reasonable knowledge of HTML and CSS, and basic knowledge of JavaScript/jQuery.</p>
+
+<h2>1. Include JavaScript and CSS</h2>
+<p>First, we need to include the required JavaScript and CSS files into the <code>&lt;head&gt;</code> part of the page.</p>
+<pre>
+&lt;!-- Include jQuery --&gt;
+&lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Include KillerCarousel CSS --&gt;
+&lt;link href=&quot;killercarousel.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+
+&lt;!-- Include KillerCarousel JavaScript --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;killercarousel.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+<p>The page now includes minimum files required to use Killer Carousel.</p>
+
+<h2>2. Define HTML for Carousel and Items</h2>
+<p>Now we need to define the HTML that will be turned into a Killer Carousel.</p>
+<p>A carousel is defined in two basic parts:</p>
+<ul>
+    <li>A main parent 'wrapping' element that becomes the box within which the carousel is displayed</li>
+    <li>Several child item wrappers, which sit inside the parent. These will become the carousel items and contain the images and other content that we may wish to add.</li> 
+</ul>
+<p>For convenience, two CSS classes have already been defined to help get these two parts working, 
+    <code>.kc-wrap</code> and <code>.kc-item</code>. These are defined in the included <em>killercarousel.css</em> file. 
+    They can be adjusted to suit your needs e.g. to change the background image or to change the size of the carousel items.
+</p>
+<p>Here we define a carousel with 10 carousel items, each carousel item contains an image:</p>
+<pre>
+&lt;!-- Main wrapping parent. --&gt;
+&lt;div class = &quot;kc-wrap&quot;&gt;
+
+    &lt;!-- Carousel items follow. --&gt;
+
+    &lt;div class=&quot;kc-item&quot;&gt;
+        &lt;img src=&quot;image1.jpg&quot; alt = &quot;&quot; &gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;kc-item&quot;&gt;
+        &lt;img src=&quot;image2.jpg&quot; alt = &quot;&quot; &gt;
+    &lt;/div&gt; 
+    &lt;div class=&quot;kc-item&quot;&gt;
+        &lt;img src=&quot;image3.jpg&quot; alt = &quot;&quot; &gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;kc-item&quot;&gt;
+        &lt;img src=&quot;image4.jpg&quot; alt = &quot;&quot; &gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;kc-item&quot;&gt;
+        &lt;img src=&quot;image5.jpg&quot; alt = &quot;&quot; &gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;kc-item&quot;&gt;
+        &lt;img src=&quot;image6.jpg&quot; alt = &quot;&quot; &gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;kc-item&quot;&gt;
+        &lt;img src=&quot;image7.jpg&quot; alt = &quot;&quot; &gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;kc-item&quot;&gt;
+        &lt;img src=&quot;image8.jpg&quot; alt = &quot;&quot; &gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;kc-item&quot;&gt;
+        &lt;img src=&quot;image9.jpg&quot; alt = &quot;&quot; &gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;kc-item&quot;&gt;
+        &lt;img src=&quot;image10.jpg&quot; alt = &quot;&quot; &gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+</pre>
+<p>That looks simple enough, but if we want the images to change size correctly on older browsers like IE8 that don't support CSS transforms,
+    we just need to add an extra little snippet of CSS:</p> 
+<pre>
+&lt;style type = &quot;text/css&quot;&gt;            
+    /* CSS for images inside item wrapper */
+    .kc-item img {
+        position:absolute;
+        pointer-events: none;   /* Make images non-selectable. */
+        width:100%;             /* Make images expand to wrapper size. */
+    }
+&lt;/style&gt;
+</pre>
+<p>This will ensure the images stretch to match the size of the <code>.kc-item</code> elements as they change size.</p>
+
+<h2>3. Start the Carousel</h2>
+<p>The final step is to start the Killer Carousel jQuery plugin to turn that HTML code into a spinning carousel.
+    This is done my adding the following snipped of JavaScript into the <code>&lt;head&gt;</code> part of the page:</p>
+
+<pre>
+$(function() {
+    $('.kc-wrap').KillerCarousel({
+        // Width of carousel.
+        width: 800, 
+        // Item spacing in 3D (modern browsers) modes.
+        spacing3d: 120,    
+        // Item spacing in 2D (old browsers) modes. 
+        spacing2d: 120,
+        showShadow:true,
+        showReflection: true
+    });
+});
+</pre>
+<h2>Full Code Listing</h2>
+<pre>
+&lt;!doctype html&gt;
+&lt;html&gt;  
+    &lt;head&gt;
+        &lt;title&gt;Killer Carousel Image Carousel&lt;/title&gt;
+
+        &lt;!-- Include jQuery. --&gt;
+        &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.min.js&quot;&gt;&lt;/script&gt;
+        
+        &lt;!-- Include KillerCarousel CSS. --&gt;
+        &lt;link href=&quot;killercarousel.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+        
+        &lt;!-- Include KillerCarousel JavaScript. --&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;killercarousel.js&quot;&gt;&lt;/script&gt;
+       
+        &lt;!-- Style for the carousel items. --&gt;
+        &lt;style type = &quot;text/css&quot;&gt;
+
+            /* CSS for images inside item wrapper */
+            .kc-item img {
+                position:absolute;
+                pointer-events: none;   /* Make images non-selectable. */
+                width:100%;             /* Make images expand to wrapper size (used in 2d modes). */
+            }
+        &lt;/style&gt;
+
+        &lt;script type = &quot;text/javascript&quot;&gt;
+		
+            // Create the carousel.
+            $(function() {
+                $('.kc-wrap').KillerCarousel({
+                    // Default natural width of carousel.
+                    width: 800,
+                    // Item spacing in 3d (has CSS3 3d) mode.
+                    spacing3d: 120,
+                    // Item spacing in 2d (no CSS3 3d) mode. 
+                    spacing2d: 120,
+                    showShadow: true,
+                    showReflection: true                    
+                });
+            });
+        &lt;/script&gt;        
+    &lt;/head&gt;
+	
+    &lt;body&gt;
+
+        &lt;!-- The carousel wrapper. --&gt;
+        &lt;div class = &quot;kc-wrap&quot;&gt;
+
+            &lt;!-- Carousel items follow --&gt;
+            &lt;div class=&quot;kc-item&quot;&gt;
+                &lt;img src=&quot;images/image1.jpg&quot; alt = &quot;&quot; &gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;kc-item&quot;&gt;
+                &lt;img src=&quot;images/image2.jpg&quot; alt = &quot;&quot; &gt;
+            &lt;/div&gt; 
+            &lt;div class=&quot;kc-item&quot;&gt;
+                &lt;img src=&quot;images/image3.jpg&quot; alt = &quot;&quot; &gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;kc-item&quot;&gt;
+                &lt;img src=&quot;images/image4.jpg&quot; alt = &quot;&quot; &gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;kc-item&quot;&gt;
+                &lt;img src=&quot;images/image5.jpg&quot; alt = &quot;&quot; &gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;kc-item&quot;&gt;
+                &lt;img src=&quot;images/image6.jpg&quot; alt = &quot;&quot; &gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;kc-item&quot;&gt;
+                &lt;img src=&quot;images/image7.jpg&quot; alt = &quot;&quot; &gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;kc-item&quot;&gt;
+                &lt;img src=&quot;images/image8.jpg&quot; alt = &quot;&quot; &gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;kc-item&quot;&gt;
+                &lt;img src=&quot;images/image9.jpg&quot; alt = &quot;&quot; &gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;kc-item&quot;&gt;
+                &lt;img src=&quot;images/image10.jpg&quot; alt = &quot;&quot; &gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+                  
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+
+        <p id="info">info</p>
+        <p>&COPY;2015 <a href="../../index.html">Star Plugins</a></p>
+        </div>
+        
+    </body>
+
+<!-- Mirrored from www.starplugins.com/killercarousel/tutorials/image-carousel by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:27:32 GMT -->
+</html>
+

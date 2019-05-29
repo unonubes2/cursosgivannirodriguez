@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">  
+    
+<!-- Mirrored from www.starplugins.com/killercarousel/examples/banner by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:27:32 GMT -->
+<head>
+        <title>Killer Carousel Example Banner</title>
+       
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+        <!-- Include jQuery -->
+        <script type="text/javascript" src="../../sites/starplugins/js/jquery.js"></script>
+        <!-- Include KillerCarousel JavaScript -->
+        <script type="text/javascript" src="../../sites/starplugins/js/killercarousel/killercarouselb6f5.js?v=10"></script>
+        <!-- Include KillerCarousel CSS -->
+        <link href="../../sites/starplugins/js/killercarousel/killercarousel7b30.css?v=4" type="text/css" rel="stylesheet" />
+
+        
+        <!-- Various page styles. -->
+        <style type="text/css">
+           
+            body {
+                font-family: arial, sans-serif;
+                color: #444;
+                font-size: 16px;
+                padding:0px;
+                margin:0px;
+            }
+            
+            p {
+                line-height: 20px;
+            }
+            
+            code {
+                font-weight: bold;
+                color: #f44;;
+            }
+            a {
+                color:#3d8dde;
+            }
+            
+            #wrapper {
+                padding:10px;
+            }
+        </style>
+        
+        <!-- Styles for the Carousel -->
+        <style type = "text/css">
+
+            .kc-wrap {
+                width:100%;
+                padding-bottom:37%; /* this makes the height change in proportion to width */
+                background:none;
+            }
+            
+            /* CSS for item wrapper */
+            .kc-item {
+                position:absolute;              
+                width: 800px;
+                height: 300px;
+                color: #fff;
+             }
+                
+            /* Image on left of each banner. */
+            .kc-item img {
+                height:100%;
+                float:left;
+                margin-right:4%;
+                /* This box-shadow won't scale, but it looks ok at all sizes */
+                box-shadow: 0px 0px 20px rgba(0,0,0,0.7);
+            }
+            
+            /* A container for the banner text */
+            .item-inner {
+                position:relative;
+                float:left;
+                width:65%;
+                top:5%;
+            }
+                        
+            .item-inner h2 {
+                font-family: georgia, serif;
+                text-shadow: -1px 1px 2px rgba(0,0,0,0.5);
+                font-weight:normal;
+            }
+            .item-inner p {
+                /* Set line height so it scales as banner does */
+                line-height:1.5em;
+                font-size:1.1em;
+            }
+            
+            /* Background colours for each banner */
+            .bg-red {
+                background-color: #ff3019;
+                background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+            }
+            .bg-green {
+                background-color: #8fc400;
+                background: linear-gradient(to bottom, #8fc400 0%,#8fc400 100%);
+            }
+            .bg-blue {
+                background-color: #7abcff;
+                background: linear-gradient(to bottom, #7abcff 0%,#60abf8 44%,#4096ee 100%);
+            }
+            .bg-orange {
+                background-color: #ffa84c;
+                background: linear-gradient(to bottom, #ffa84c 0%,#ff7b0d 100%); 
+            }
+         
+        </style>
+        
+        <script type = "text/javascript">
+            $(function() {
+                $('.kc-wrap').KillerCarousel({
+                    // Natural width of carousel. 
+                    width: 800, 
+                    // Items are spaced by their full width.
+                    spacing2d: 800,            
+                    // Scale to match wrapper 100%.
+                    autoScale: 100,
+                    renderer3d: null,
+                    renderer2d: "render2dBasic",
+                    // Place origin at top of wrapper.
+                    horizon: 'top:0%',
+                    // Align items by their top edges.
+                    itemAlign: "top",
+                    // Loop the carousel.
+                    infiniteLoop:false,
+                    // Turn on the navigation buttons.
+                    showNavigation: true,
+                    autoChangeDirection:1,
+                    useMouseWheel:false
+                });
+            });
+    </script>
+        <script type="text/javascript">
+            
+             // The following piece of code can be ignored.
+             $(function(){
+                 $(window).resize(function() {
+                     $('#info').text("Page width: "+$(this).width());
+                 });
+                 $(window).trigger('resize');
+             });
+             
+            // The following piece of code can be ignored.
+            if (window.location.hostname.indexOf("starplugins.") != -1) {
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-254857-7']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            }
+             
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+        
+                 
+
+<h1>Killer Carousel Example: Banner</h1>
+<p>As well as fancy 3D style carousels, Killer Carousel allows you to create 2D HTML slides, especially useful for large 'hero' style banners.</p>
+<p>Just define a banner of some width, in this case <code>width:800</code>, set spacing to match, <code>spacing2d:800</code> and set <code>autoScale:100</code> to make it expand to 100% width.</p>
+<p>Killer Carousel will then implement a swipe response more suited to banners.</p>
+
+<div class = "kc-wrap">
+    <!-- Carousel items follow. -->
+    <div class="kc-item bg-red">
+        <img src="../../kcimages/cropped-small/image1.jpg" alt = "Salvator Mundi 1519">
+        <div class="item-inner">
+            <h2>Salvator Mundi 1519</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+    </div>
+
+    <div class="kc-item bg-green">
+        <img src="../../kcimages/cropped-small/image2.jpg" alt = "St. John the Baptist 1516">
+        <div class="item-inner">
+            <h2>St. John the Baptist 1516</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+    </div>
+
+    <div class="kc-item bg-blue">
+        <img src="../../kcimages/cropped-small/image3.jpg" alt = "Lady with an Ermine 1490">
+        <div class="item-inner">
+            <h2>Lady with an Ermine 1490</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+    </div>
+    <div class="kc-item bg-orange">
+        <img src="../../kcimages/cropped-small/image4.jpg" alt = "St. Jerome in the Wilderness 1480">
+        <div class="item-inner">
+            <h2>St. Jerome in the Wilderness 1480</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+    </div>
+
+
+</div>
+
+        <p id="info">info</p>
+        <p>&COPY;2015 <a href="../../index.html">Star Plugins</a></p>
+        </div>
+        
+    </body>
+
+<!-- Mirrored from www.starplugins.com/killercarousel/examples/banner by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:27:32 GMT -->
+</html>
+

@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">  
+    
+<!-- Mirrored from www.starplugins.com/killercarousel/trial by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:27:06 GMT -->
+<head>
+               
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+        <!-- Include jQuery -->
+        <script type="text/javascript" src="../sites/starplugins/js/jquery.js"></script>
+        <!-- Include KillerCarousel JavaScript -->
+        <script type="text/javascript" src="../sites/starplugins/js/killercarousel/killercarousel3f56.js?v=11"></script>
+        <!-- Include KillerCarousel CSS -->
+        <link href="../sites/starplugins/js/killercarousel/killercarousel7b30.css?v=4" type="text/css" rel="stylesheet" />
+        
+        <link rel="shortcut icon" type="image/x-icon" href="../favicon30f4.ico?v=3">
+        
+        <!-- Include Cloud Zoom CSS -->
+        <link href="../sites/starplugins/js/cloudzoom/cloudzoom7b30.css?v=4" type="text/css" rel="stylesheet" />
+        <!-- Include Cloud Zoom JavaScript -->
+        <script type="text/javascript" src="../sites/starplugins/js/cloudzoom/cloudzoom5059.js?v=20"></script>
+        
+        <script type="text/javascript" src="../sites/starplugins/js/thumbelina/thumbelina3860.js?v=1"></script>
+        
+        <link href="../sites/starplugins/js/jetzoom/jetzoom30f4.css?v=3" type="text/css" rel="stylesheet" />
+        <!-- Include Jet Zoom JavaScript -->
+        <script type="text/javascript" src="../sites/starplugins/js/jetzoom/jetzoom8e0e.js?v=8"></script>
+        <script type="text/javascript" src="../sites/starplugins/js/starzoomae52.js?v=5"></script>
+        <link href="../sites/starplugins/js/starzoom30f4.css?v=3" type="text/css" rel="stylesheet" />
+
+        
+        <script type="text/javascript" src="../sites/starplugins/js/fancy/jquery.fancybox5e1f.js?v=2"></script>
+        <link rel="stylesheet" href="../sites/starplugins/js/fancy/jquery.fancybox4c03.css??v=1" type="text/css" media="screen" />
+        
+                <link href="../sites/starplugins/js/thumbelina/thumbelina.css" type="text/css" rel="stylesheet" />
+
+        
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="../../netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="../../netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="../../netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+        
+
+        <!-- Various page styles. -->
+        <style type="text/css">
+            body {
+                font-size:16px;
+                font-family: "Arvo","georgia",serif;
+                background-color:#333;
+                height:100%;
+                
+            }
+            
+            .band-color-1 a, .band-color-2 a, .band-color-3 a, .band-color-4 a  {
+                color:#ccccff;
+               
+            }
+            strong {
+                font-weight:700;
+            }
+            
+            .row {
+                padding-bottom:40px;
+            }
+            
+            .btn, label {
+                font-family: "Exo 2",sans-serif;
+            }
+            .navbar, login-nav {
+                font-family: "Exo 2",sans-serif; 
+            }
+   
+            
+            h1,h2,h3,h4,h5 {
+                font-weight:normal;
+                font-family: "Exo 2",sans-serif;
+                margin-bottom:20px;
+                margin-top:25px;
+            }
+            
+         
+            
+            h1,h2 {
+                text-shadow: -1px -1px 1px rgba(0,0,0,0.1);
+                border-radius: 3px;
+                color:rgba(0,0,0,0.75);
+                font-weight:400;
+            }
+           
+            
+            h3, h3 small {
+                font-family: "Arvo",serif;
+                color:rgba(0,0,0,0.75);
+                text-shadow:none;
+            }
+          
+            
+            h4 {
+                font-family: "Arvo",serif;
+                color:rgba(0,0,0,0.75);
+                 text-shadow:none;
+            }
+            #footer, #footer a {
+               color:#fff;
+               text-align: center;
+               font-size: 14px;
+               height:100%;
+               padding-top:15px;
+               padding-bottom:15px;
+            }
+/*  http://css-tricks.com/responsive-data-tables/ 
+  Look to implement this at some point.
+
+*/
+ .props-table {
+        border-collapse: collapse;
+        color:#444;
+        font-size:14px;    
+        background-color:#f5f5f5
+    }
+    .props-table th {
+        text-align: center;
+        padding:5px;
+    }
+    .props-table td {
+      
+        padding:5px;      
+    }
+    
+    .props-table td,.props-table td+td+td+td {
+        font-family: "Courier New",monospace;
+        text-align: center;
+    }
+    .props-table td+td+td  {
+        font-family: arial, sans-serif;
+        text-align: left;
+    }
+
+/* general spacer to place between stacked images etc. */
+.gen-spacer {
+    margin-top:25px;
+    margin-bottom:25px;
+    display:block;
+}
+
+/* prices in checkout */
+.price {
+   
+    float:right;
+    font-size:20px;
+}
+
+.text-danger {
+    font-family: "Exo 2", sans-serif;
+    font-weight:bold;
+    font-size:16px;
+    color: #aa4444;
+}
+
+/* stops stretching of paypal/wallet buttons */
+[type=image] {
+    padding:0px;
+    border:none;
+    width:auto;
+   height:auto;
+   background:none;
+}
+
+/* bolds selected item in checkout */
+input:checked + label {
+    font-weight:bold;
+}
+
+
+ .band-color-2 a {
+     color:darkblue;
+   
+ }
+ .band-color-2 .btn {
+     color:#fff;
+     
+ }
+
+/* Syle for download product boxes.*/
+.band-color-2 .well {
+      color:#000;
+    font-size:16px;
+    line-height: 22px;
+}
+
+/* reddish */             
+.band-color-1 {
+     background-color:#D74B4B;
+      color:#fff;
+    padding-top:20px;
+ }
+ /* orangey */
+.band-color-2 {
+     background-color:#D8914B;
+     color:#fff;
+     padding-top:20px;
+ }
+
+
+/* Dark purple */
+.band-color-3 {
+    background-color:#914BD8;color:#fff;
+    padding-top:20px;
+}
+/* pinkish */
+.band-color-4 {
+
+    background-color:#E37D7D;color:#fff;
+    padding-top:20px;
+}
+
+.band-color-5 {
+    background-color:#fff;color:#444;
+    padding-top:20px;
+}
+
+.band-color-6 {
+    padding-top:20px;
+    color:#fff;
+    background-color:#eeb0b0;
+}
+.download-box {
+    color:#000;
+    font-size:14px;
+ }
+ ul li {
+     font-size:15px;
+     margin-bottom:5px;
+ }
+
+/*750px	970px	1170px*/
+/* Large devices (large desktops, 1200px and up) */
+/*@media (min-width: 1170px) { body {font-size:18px;}  }*/
+
+           
+            #footer a {
+                text-decoration: underline;
+                color:#fff;
+            }
+            #footer a:hover {
+                color:#ccc;
+            }
+            #footer .container {
+                background-color:transparent;
+                font-family:'Exo 2';
+            }
+            .login-nav a{
+                color:#aaa;
+                font-size: 14px;
+            }
+            .login-nav a:hover {
+                color:#fff;
+                text-decoration: none;
+            }
+            
+            .login-nav a.btn {
+                color:#fff;
+            }
+            
+            .navbar {
+                border-radius:0;
+                margin-bottom: 0px;
+            }
+            
+            .mainnav {
+                padding-bottom:0px;
+                font-family: "Exo 2";
+            }
+            .mainnav a {
+             padding:10px;   
+             padding-top:0px;
+             display:block;
+            }
+            
+            .mainnav a.first {
+                padding-left:0px;
+            }
+            
+            .logo-area {
+                padding-bottom:0px;
+                padding-top:10px;
+                font-family: "Exo 2";
+            }
+            
+            .revision {
+                font-size:14px;
+                margin-top:-15px;
+            }
+            .well a {
+                text-decoration: underline;
+            }
+ 
+ /* little adjusment to suit our font better */
+ .glyphicon {
+     top:3px;
+ }
+ .twitter-logo {
+     margin-top:-3px;
+ }
+
+        </style>
+        
+    <script type="text/javascript">
+        $(function(){
+            $(".download").text('Download');
+            $(".download").removeAttr('data-waiting');
+            
+            $(".download").click(function(){
+                var $but = $(this);
+                if ($but.attr('data-waiting') == '1') return false;
+                $but.attr('data-waiting','1');
+                $but.text("Wait...");
+                setTimeout(function(){
+                    $but.text('Download');
+                    $but.removeAttr('data-waiting');
+                },5000);
+            })
+        });
+            </script>
+            <script type="text/javascript">
+            
+        CloudZoom.quickStart(); // cz
+        JetZoom.quickStart();
+        StarZoom.quickStart();
+           
+            // The following piece of code can be ignored.
+            if (window.location.hostname.indexOf("starplugins.") != -1) {
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-254857-7']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            }
+             
+        </script>
+    </head>
+    <body>
+        
+       
+        <div style="padding-top:10px;">
+        <div class="container" >
+            <div class='row logo-area'>
+                <div class="col-sm-6">
+                     <a class="" href="../index.html"><img src="../images/starplugins/starplugins-logo.png" alt ="Star Plugins logo"></a>
+                </div>
+                 
+                <div class='col-sm-6 text-right login-nav'>
+                   
+                                        <ul class="list-inline">
+                                            <li><a title ="Follow @StarPlugins" href="http://www.twitter.com/StarPlugins">
+                                                    <img class="twitter-logo" src="../images/starplugins/twitter-logo.png">
+                                                </a></li>
+                        <li><a href="../support.html">Support</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        
+                                                <li><a class="btn btn-primary" href="../login.html">Login</a></li>
+                                            
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class='row mainnav'>
+                <div class='col-sm-12 login-nav'>
+                    <ul class="list-inline">
+                        <li class="dropdown">
+                            <a href="#" class="first dropdown-toggle" data-toggle="dropdown">Cloud Zoom <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../cloudzoom.html">Cloud Zoom Home</a></li>
+                                <li><a href="../cloudzoom/quickstart.html">Cloud Zoom Quick Start</a></li>
+                                <li><a href="../cloudzoom/examples.html">Cloud Zoom Examples</a></li>
+                                <li><a href="../cloudzoom/api.html">Cloud Zoom Developer's API</a></li>
+                                <li><a href="../cloudzoom/trial.html">Download Cloud Zoom Trial</a></li>
+                                <li class="divider"></li>
+                                <li><a href="../cloudzoom/wordpress.html">WordPress Module</a></li>
+                                <li><a href="../cloudzoom/woocommerce.html">WooCommerce Module</a></li>
+                                <li><a href="../cloudzoom/magento.html">Magento Module</a></li>
+                                <li><a href="../cloudzoom/drupal.html">Drupal 7 Module</a></li>
+                                <li><a href="../cloudzoom/opencart.html">NEW! Open Cart Extension</a></li>
+                                <li class="divider"></li>
+                                <li><a href="../checkout/cloudzoom.html">Buy Cloud Zoom <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jet Zoom <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../jetzoom.html">Jet Zoom Home</a></li>
+                                <li><a href="../jetzoom/quickstart.html">Jet Zoom Quick Start</a></li>
+                                <li><a href="../jetzoom/examples.html">Jet Zoom Examples</a></li>
+                                <li><a href="../jetzoom/api.html">Jet Zoom Developer's API</a></li>
+                                <li><a href="../checkout/jetzoom.html">Buy Jet Zoom <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Star Zoom <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                 <li><a href="../starzoom.html">Star Zoom Home</a></li>
+                                <li><a href="../starzoom/quickstart.html">Star Zoom Quick Start</a></li>
+                                <li><a href="../starzoom/examples.html">Star Zoom Examples</a></li>
+                                <li><a href="../atomiser.html">Atomiser</a></li>
+                                <li><a href="../starzoom/api.html">Star Zoom Developer's API</a></li>
+                                <li><a href="../starzoom/trial.html">Download Star Zoom Trial</a></li>
+                                <li><a href="../checkout/star-zoom.html">Buy Star Zoom <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Killer Carousel <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../killercarousel.html">Killer Carousel Home</a></li>
+                                <li><a href="trial.html">Killer Carousel Trial</a></li>
+                                <li><a href="../checkout/killercarousel.html">Buy Killer Carousel <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                            </ul>
+                        </li>
+                        
+                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>NEW!</strong> Bling3D <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../bling3d/home.html">Bling3D Home</a></li>
+                                <li><a href="../bling3d/trial.html">Bling3D Trial</a></li>
+                                <li><a href="../checkout/bling3d.html">Buy Bling3D <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="dropdown">
+                            <a href="../software-development.html" class="dropdown-toggleX" data-toggleX="dropdown">Development</a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">FREE <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../thumbelina.html">Thumbelina Content Slider</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                </div>
+                
+
+
+            </div>
+           
+
+        </div>
+        </div>
+<!--
+        <div style="background-color:#000">
+            <div class="container">
+
+                <div class="row text-center" style="margin-top:20px;padding:10px 0px 10px 0px;margin:0px;line-height:0px">
+
+
+                                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                <ins class="adsbygoogle"
+                                     style="display:inline-block;width:728px;height:90px"
+                                     data-ad-client="ca-pub-3986248807237670"
+                                     data-ad-slot="2984464343"></ins>
+                                <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+
+                </div>
+            </div>
+        </div>
+-->
+        
+     
+
+<div class="band-color-2">
+    <div class="container">
+        
+        <div class="row">
+              <h1 class="col-sm-12">Download a Trial</h1>
+              
+              <div class="col-sm-6">
+                  <p class="lead">You can try out the plugin before purchase to ensure it's right for your site.</p>
+                  <h2>Directions</h2>
+         <ul>
+             
+             <li>Download the trial using the form, and implement it on your website</li>
+             <li>When you are happy the plugin is suitable for your website, purchase a commercial license</li>
+             <li>Just replace the trial JavaScript file with your commercial license version</li>
+             </ul>
+        <p>The trial version is not limited in any way. It allows you to test the plugin on your site before purchase.</p>
+        <p>The only difference between the trial and commercial license is message showing that the trial version is being used.</p>
+</div>
+              
+<div class="col-sm-6">
+        
+    
+<div class="host well download-box">
+    <div class="well well-sm">
+    <p><strong>Killer Carousel 1 Site License (KC01-01) TRIAL</strong></p>    </div>
+    
+        
+    <p>Enter the website to use this product e.g.<strong>mysite.com</strong>, 
+                         <strong>blog.mysite.com</strong>.<br/>Do NOT include <strong style="text-decoration: line-through">www</strong> or <strong style="text-decoration: line-through">http</strong> parts:</p>
+        <form id="download" action="#" method="POST" >
+        <div class="form-group">
+<input class="form-control" name="download" type="hidden" />
+</div>        <div class="form-group">
+    <div class="input-group">
+    <span class="input-group-addon">1</span>
+<input class="form-control" type="text" name="host0" value="" />
+    </div>
+
+</div>        
+        
+        
+        <div style='clear:both'><div class="form-group">
+<p><img src="../captchaimage5946.png?c=0.41840900-1556641338" alt="Captcha image"></p>
+    <label for="captcha">Security Test (enter the letters shown above) </label><br/>
+<input class="form-control"type="text" name="captcha" />
+<p class="text-danger"></p>
+</div></div>        <button style="clear:both" class="download btn btn-primary star-button green" type="submit" name="submit" value="Download" >Download</button>        
+        
+        
+    </form>    
+    
+    </div></div>
+
+
+</div>
+        </div>
+</div>      
+      
+        
+        <div id="footer">
+            
+                <div class="container">
+                    
+                    <ul class="list-inline">
+                        <li><a href="../privacy.html">Privacy</a></li>
+                        <li><a href="../terms.html">Terms</a></li>
+                        <li><a href="../license.html">License</a></li>
+                    </ul>
+                    
+                    
+                    <p>©2012-2015 Star Plugins. All rights reserved. Use of this website is deemed as acceptance of the terms of use.</p>
+                </div>
+        </div>
+          </div>
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="../../s7.addthis.com/js/300/addthis_widget.js#pubid=raffaelec" async="async"></script>
+          
+    </body>
+
+<!-- Mirrored from www.starplugins.com/killercarousel/trial by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:27:07 GMT -->
+</html>
+

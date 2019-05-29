@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">  
+    
+<!-- Mirrored from www.starplugins.com/killercarousel/examples/ajax-items by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:27:32 GMT -->
+<head>
+        <title>Killer Carousel Example: Ajax items</title>
+       
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+        <!-- Include jQuery -->
+        <script type="text/javascript" src="../../sites/starplugins/js/jquery.js"></script>
+        <!-- Include KillerCarousel JavaScript -->
+        <script type="text/javascript" src="../../sites/starplugins/js/killercarousel/killercarouselb6f5.js?v=10"></script>
+        <!-- Include KillerCarousel CSS -->
+        <link href="../../sites/starplugins/js/killercarousel/killercarousel7b30.css?v=4" type="text/css" rel="stylesheet" />
+
+        
+        <!-- Various page styles. -->
+        <style type="text/css">
+           
+            body {
+                font-family: arial, sans-serif;
+                color: #444;
+                font-size: 16px;
+                padding:0px;
+                margin:0px;
+            }
+            
+            p {
+                line-height: 20px;
+            }
+            
+            code {
+                font-weight: bold;
+                color: #f44;;
+            }
+            a {
+                color:#3d8dde;
+            }
+            
+            #wrapper {
+                padding:10px;
+            }
+        </style>
+        
+        <!-- Styles for the Carousel -->
+        <style type = "text/css">
+            .kc-wrap {
+                padding-bottom:40%;
+            }
+            
+            /* CSS for images inside item wrapper */
+            .kc-item img {
+                position:absolute;
+                pointer-events: none;   /* Make images non-selectable. */
+                width:100%;             /* Make images expand to wrapper size (used in 2d modes). */
+            }
+            
+            #loading-message {
+                position:absolute;
+                left:10px;
+                top:10px;
+                color:#fff;
+            }
+            
+           
+        </style>
+        
+        <script type = "text/javascript">
+            
+           
+            
+            $(function() {
+                   
+                $('.kc-wrap').KillerCarousel({
+                    // Width of carousel.
+                    width: 800, 
+                    // Item spacing in 3d (CSS3 3d) mode.
+                    spacing3d: 130,    
+                    // Item spacing in 2d (no CSS3 3d) mode. 
+                    spacing2d: 200,
+                    showShadow:true,
+                    showReflection: true,
+                    fadeEdgeItems:true,
+                    autoScale:110,
+                    itemAlign:'bottom',
+                    renderer3d: 'render3dFlow',
+                    renderer2d: 'render2dFlow',
+                    horizon:"top:85%",
+                    perspectiveOrigin:'50% -90px',
+                    infiniteLoop:false,
+                    showNavigation:true,
+                    easing:12
+                });
+                
+                // This function searches for images via the Flikr image feed service.
+                // For each image found (it seems to return 20), it creates a carousel item and appends it to
+                // the end of the carousel.
+                var firstItem = true;
+                var addFlickrItems = function (search, carousel) {
+                    var url = "http://api.flickr.com/services/feeds/photos_public.gne?tags=" + search + "&tagmode=any&format=json&jsoncallback=?";
+                    var success = function (data) {
+                        if(!data.items.length) {
+                            $('#loading-message').text('No items found. Try another search.');
+                        }
+                        $.each(data.items,
+                            function (i, flickrItem) {
+                            var img = new Image();
+                                // When the image has loaded, create a carousel item from it,
+                                // and append to the end of the carousel.
+                                img.onload = function () {
+                                   // Clear 'loading' text when first image loaded.
+                                    $('#loading-message').text('');
+                                    var $item = $("<div class='kc-item'><img src = '" + flickrItem.media.m + "' ></div>");
+                                    $item.css({
+                                        visibility: 'visible'
+                                    });
+                                    var item = carousel.createItem($item);
+                                    // Using inline-styles is not recommended for carousel items.
+                                    // Use setSize function instead.
+                                    item.setSize(img.width, img.height);
+                                    carousel.appendItem(item);
+                                    // The following detects for all items loaded..
+                                    //if(i == data.items.length-1) {
+                                    //        // Do something.
+                                    //}
+                                    
+                            };
+                            // Set the image source to trigger the loading.
+                            img.src = flickrItem.media.m;
+                        });
+                       
+                        
+                    };
+                    $.getJSON(url,success);
+                };
+                
+                // When the add items button is clicked, search for images using the search term. 
+               $('#add-items-but').click(function(){
+                    addFlickrItems( $('#add-items-search').val(), $("#carousel").data('KillerCarousel') );
+                    $('#loading-message').text('Loading...');
+                });
+               
+        });
+    </script>
+        <script type="text/javascript">
+            
+             // The following piece of code can be ignored.
+             $(function(){
+                 $(window).resize(function() {
+                     $('#info').text("Page width: "+$(this).width());
+                 });
+                 $(window).trigger('resize');
+             });
+             
+            // The following piece of code can be ignored.
+            if (window.location.hostname.indexOf("starplugins.") != -1) {
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-254857-7']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            }
+             
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+        
+                 
+
+<h1>Killer Carousel Example: Ajax items</h1>
+<p>This example dynamically loads images from the Flickr image service. For each image, it creates a carousel item and appends it to the initially empty carousel.</p>
+<p>Enter a search term below, and click the "Add Carousel Items" button. <strong>Note: if Flickr is busy, you might need to try a few times.</strong></p>
+
+<div id ="carousel" class = "kc-wrap">
+    <div id="loading-message">Click the "Add Carousel Items" button below to create some items...</div>
+</div>
+
+<p>
+    <label for ="add-items-search">Search Text:</label>
+    <input name ="add-items-search" id="add-items-search" value="trees">
+    <input id="add-items-but" type="button" value ="Add Carousel Items">
+</p>
+
+        <p id="info">info</p>
+        <p>&COPY;2015 <a href="../../index.html">Star Plugins</a></p>
+        </div>
+        
+    </body>
+
+<!-- Mirrored from www.starplugins.com/killercarousel/examples/ajax-items by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:27:32 GMT -->
+</html>
+

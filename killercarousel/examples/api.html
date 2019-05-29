@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">  
+    
+<!-- Mirrored from www.starplugins.com/killercarousel/examples/api by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:27:32 GMT -->
+<head>
+        <title>Killer Carousel Example 1</title>
+       
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+        <!-- Include jQuery -->
+        <script type="text/javascript" src="../../sites/starplugins/js/jquery.js"></script>
+        <!-- Include KillerCarousel JavaScript -->
+        <script type="text/javascript" src="../../sites/starplugins/js/killercarousel/killercarouselb6f5.js?v=10"></script>
+        <!-- Include KillerCarousel CSS -->
+        <link href="../../sites/starplugins/js/killercarousel/killercarousel7b30.css?v=4" type="text/css" rel="stylesheet" />
+
+        
+        <!-- Various page styles. -->
+        <style type="text/css">
+           
+            body {
+                font-family: arial, sans-serif;
+                color: #444;
+                font-size: 16px;
+                padding:0px;
+                margin:0px;
+            }
+            
+            p {
+                line-height: 20px;
+            }
+            
+            code {
+                font-weight: bold;
+                color: #f44;;
+            }
+            a {
+                color:#3d8dde;
+            }
+            
+            #wrapper {
+                padding:10px;
+            }
+        </style>
+        
+        <!-- Styles for the Carousel -->
+        <style type = "text/css">
+
+          
+            /* CSS for images inside item wrapper */
+            .kc-item img {
+                pointer-events: none;   /* Make images non-selectable. */
+                width:100%;             /* Make images expand to wrapper size (used in 2d modes). */
+            }
+            
+            /* CSS for API code examples */
+            .eg-block {
+                display:none;
+            }
+            
+            .api-desc {
+                margin-bottom:10px;
+            }
+            .api-param {
+                font-weight: bold;
+            }
+         
+        </style>
+        
+        <script type = "text/javascript">
+            $(function() {
+                
+                // This piece of code deals with showin/hiding the API code examples,
+                // so can be ignored.
+                var first  = $('option',"#api-select").first().val();//css({display:'block'});
+                $('#eg-'+first +", #desc-"+first).css('display','block');
+                $('#api-select').change(function(){
+                    createCarousel();
+                    $('.eg-block').css({display:'none'});
+                    $('#eg-'+$(this).val()).css({display:'block'});
+                    $('#desc-'+$(this).val()).css({display:'block'});
+                });
+                
+                // kc will store reference to carousel.
+                kc = null;
+                // $backup stores copy of HTML list.
+                // If no carousel exists, then the list is restored and used
+                // to create a new carousel (e.g. after testing destroy() function).
+                var $backup = $('.kc-item').clone();
+                $('.kc-item').remove();
+                var createCarousel = function() {
+                    if (kc === null) {
+                        $('.kc-wrap').append($backup.clone());
+                        // Initialise carousel.
+                        $('.kc-wrap').KillerCarousel({
+                            // Width of carousel.
+                            width: 800, 
+                            // Item spacing in 3d (CSS3 3d) mode.
+                            spacing3d: 120,    
+                            // Item spacing in 2d (no CSS3 3d) mode. 
+                            spacing2d:120,
+                            showShadow:true,
+                            showReflection:true,
+                            // Looping mode.
+                            infiniteLoop: true,
+                            // Scale at 75% of parent element.
+                            autoScale: 75
+                        });
+                        // Get instance of Killer Carousel object (use for all examples).
+                        kc = $('.kc-wrap').data('KillerCarousel');
+                    }
+                };
+                
+                // Create initial carousel.
+                createCarousel();
+            });
+    </script>
+        <script type="text/javascript">
+            
+             // The following piece of code can be ignored.
+             $(function(){
+                 $(window).resize(function() {
+                     $('#info').text("Page width: "+$(this).width());
+                 });
+                 $(window).trigger('resize');
+             });
+             
+            // The following piece of code can be ignored.
+            if (window.location.hostname.indexOf("starplugins.") != -1) {
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-254857-7']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            }
+             
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+        
+                 
+
+<h1>Killer Carousel Example: API</h1>
+<p>The Killer Carousel API allows you to control the carousel by calling various API functions.</p>
+<p>This will allow you to tailor the behaviour of Killer Carousel to suit different projects.</p>
+<p>Choose the API function below the carousel to see an example of how it can be used.</p>
+
+<div class = "kc-wrap">
+    <!-- Carousel items follow -->
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image1.jpg" alt = "Salvator Mundi 1519">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image2.jpg" alt = "St. John the Baptist 1516">
+    </div> 
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image3.jpg" alt = "Lady with an Ermine 1490">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image4.jpg" alt = "St. Jerome in the Wilderness 1480">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image5.jpg" alt = "Head of a Woman 1508">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image6.jpg" alt = "St. John the Baptist 1516">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image7.jpg" alt = "The Virgin and Child with St Anne and St John the Baptist 1500">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image8.jpg" alt = "Madonna of the Yarnwinder 1507">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image9.jpg" alt = "The Virgin and Child with St. Anne 1508">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image10.jpg" alt = "Madonna of the Carnation 1480">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image11.jpg" alt = "La belle ferronnière 1496">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image12.jpg" alt = "Adoration of the Magi 1481">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image13.jpg" alt = "Portrait of a Musician 1490">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image14.jpg" alt = "Virgin of the Rocks 1486">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image15.jpg" alt = "Madonna of Laroque 1503">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image16.jpg" alt = "Benois Madonna 1478">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image17.jpg" alt = "Mona Lisa 1517">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image18.jpg" alt = "Portrait of a man in red chalk 1512">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image19.jpg" alt = "Ginevra de' Benci 1478">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image20.jpg" alt = "The Last Supper 1498">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image21.jpg" alt = "Annunciation 1475">
+    </div>
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image22.jpg" alt = "The Battle of Anghiari 1505">
+    </div>
+   
+</div>
+<hr/>
+
+<select id='api-select'><option value="animateToRelativeItem">animateToRelativeItem() - Moves backwards or forwards by the desired amount of items.</option><option value="bringToFront">bringToFront() - Brings a specific item to the front of the carousel.</option><option value="getFrontItemIndex">getFrontItemIndex() - Returns the index number of the item at the front.</option><option value="getItemElement">getItemElement() - Returns jQuery element of a carousel item.</option><option value="destroy">destroy() - Destroys the carousel.</option><option value="createItem">createItem() - Creates a carousel item from a jQuery object or HTML string.</option><option value="appendItem">appendItem() - Appends an item to the end of the carousel.</option><option value="createNavButtons">createNavButtons() - Creates the navigations buttons, usually after creating a carousel dynamically via ajax.</option><option value="refreshSize">refreshSize() - Forces carousel to resize.</option></select><div id='desc-animateToRelativeItem' class='eg-block'><h3><code>animateToRelativeItem(amount)</code></h3><p><code>amount</code> (type = NUMBER. Amount of items to move by.)</p><p>Moves backwards or forwards by the desired amount of items. Negative amounds move backwards.</p></div><div id='desc-bringToFront' class='eg-block'><h3><code>bringToFront(itemIndex)</code></h3><p><code>itemIndex</code> (type = NUMBER. Index of the item to move to the front (zero = first item).)</p><p>Brings a specific item to the front of the carousel.</p></div><div id='desc-getFrontItemIndex' class='eg-block'><h3><code>getFrontItemIndex()</code></h3><p>Returns the index number of the item at the front.</p></div><div id='desc-getItemElement' class='eg-block'><h3><code>getItemElement(itemIndex)</code></h3><p><code>itemIndex</code> (type = NUMBER. Index number of the item.)</p><p>Returns jQuery element of a carousel item.</p></div><div id='desc-destroy' class='eg-block'><h3><code>destroy()</code></h3><p>Destroys the carousel.</p></div><div id='desc-createItem' class='eg-block'><h3><code>createItem(itemDefinition)</code></h3><p><code>itemDefinition</code> (type = STRING | JQUERY. jQuery object or HTML string the defines the carousel item.)</p><p>Creates a carousel item from a jQuery object or HTML string. Returns a carousel item ready for appending to the carousel.</p></div><div id='desc-appendItem' class='eg-block'><h3><code>appendItem(item)</code></h3><p><code>item</code> (type = KILLERCAROUSELITEM. Object created by createItem().)</p><p>Appends an item to the end of the carousel. Item created using createItem().</p></div><div id='desc-createNavButtons' class='eg-block'><h3><code>createNavButtons()</code></h3><p>Creates the navigations buttons, usually after creating a carousel dynamically via ajax.</p></div><div id='desc-refreshSize' class='eg-block'><h3><code>refreshSize()</code></h3><p>Forces carousel to resize. Normally resizes automatically after window resize event.</p></div>
+<hr/>
+<h3>Example</h3>
+
+<!-- ******  Code examples HTML for each API function. ****** -->
+
+<!-- animateToRelativeItem -->
+<div id = "eg-animateToRelativeItem" class ="eg-block">
+    <input id="eg-animateToRelativeItem-bwd" type="button" value="< Backward">
+    <input id="eg-animateToRelativeItem-fwd" type="button" value="Forward >">
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('#eg-animateToRelativeItem-fwd').click(function(){
+            kc.animateToRelativeItem(1);
+        });
+        $('#eg-animateToRelativeItem-bwd').click(function(){
+            kc.animateToRelativeItem(-1);
+        });
+    });
+</script>
+
+<!-- bringToFront -->
+<div id = "eg-bringToFront" class ="eg-block">
+    <label for="eg-bringToFront-select">Bring this item to front:</label>
+    <select id="eg-bringToFront-select">
+        <option value="0">Item 0</option>
+        <option value="1">Item 1</option>
+        <option value="2">Item 2</option>
+        <option value="3">Item 3</option>
+        <option value="4">Item 4</option>
+        <option value="5">Item 5</option>
+        <option value="6">Item 6</option>
+        <option value="7">Item 7</option>
+        <option value="8">Item 8</option>
+        <option value="9">Item 9</option>
+        <option value="10">Item 10</option>
+        <option value="11">Item 11</option>
+        <option value="12">Item 12</option>
+        <option value="13">Item 13</option>
+        <option value="14">Item 14</option>
+        <option value="15">Item 15</option>
+        <option value="16">Item 16</option>
+        <option value="17">Item 17</option>
+        <option value="18">Item 18</option>
+        <option value="19">Item 19</option>
+        <option value="20">Item 20</option>
+        <option value="21">Item 21</option>
+    </select>
+</div>
+<script type="text/javascript">
+    $(function(){
+        /* bringToFront() */
+        $('#eg-bringToFront-select').change(function(evt){
+            var val = 1 * $(evt.target).val();
+            kc.bringToFront(val);
+        });
+    });
+</script>
+
+<!-- getFrontItemIndex -->
+<div id = "eg-getFrontItemIndex" class ="eg-block">
+    <p>The following number is updated at 0.1 second intervals with the index of the front item.</p>
+    <h2 id="eg-getFrontItemIndex-index"></h2>
+</div>
+<script type="text/javascript">
+    $(function(){
+        /* getFrontItemIndex() */
+        setInterval(function(){
+            if (kc===null) return;
+            $('#eg-getFrontItemIndex-index').text("Front item index = "+kc.getFrontItemIndex());
+        },100);
+    });
+</script>
+
+<!-- createItem -->
+<div id = "eg-createItem" class ="eg-block">
+    <p>An example of <code>createItem()</code> can be found <a href='ajax-items.html'>here</a>.</p>
+</div>
+<!-- appendItem -->
+<div id = "eg-appendItem" class ="eg-block">
+    <p>An example of <code>appendItem()</code> can be found <a href='ajax-items.html'>here</a>.</p>
+</div>
+
+<!-- getItemElement -->
+<div id = "eg-getItemElement" class ="eg-block">
+    <p>Clicking the button below will add text on a blue background to the top of alternate carousel items. Clicking again will remove the text.</p>
+    <input id="eg-getItemElement-but" type="button" value="Text on/off">
+</div>
+
+<!-- refreshSize -->
+<div id = "eg-refreshSize" class ="eg-block">
+    <p>Call <code>refreshSize()</code> if the wrapping carousel element size is changed independently of a window resize event.</p>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        /* getItemElement() */
+        $('#eg-getItemElement-but').click(function(){
+            for(var index=0; index<22; index+=2) {
+                var $elem = kc.getItemElement(index);
+                if ( $('.added',$elem).first().length) {
+                    $('.added',$elem).remove();
+                    continue;
+                }
+                $elem.append(
+                    '<div class="added" style="display:none;position:absolute;border:1px solid #000; top:-15%;width:100%;height:15%;background-color:#00f;color:#fff">'+
+                        '<div style="padding:5%">Added element</div>'+
+                    '</div>'
+                );
+                $('.added',$elem).show(500);
+            }
+        });
+    });
+</script>
+
+<!-- destroy -->
+<div id = "eg-destroy" class ="eg-block">
+    <p>Clicking the button below will destroy the carousel.</p>
+    <input id="eg-destroy-but" type="button" value="Destroy Carousel">
+</div>
+<script type="text/javascript">
+    $(function(){
+        /* destroy() */
+        $('#eg-destroy-but').click(function(){
+            kc.destroy();
+            kc = null;
+        });
+    });
+</script>
+
+<hr/>
+        <p id="info">info</p>
+        <p>&COPY;2015 <a href="../../index.html">Star Plugins</a></p>
+        </div>
+        
+    </body>
+
+<!-- Mirrored from www.starplugins.com/killercarousel/examples/api by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:27:32 GMT -->
+</html>
+

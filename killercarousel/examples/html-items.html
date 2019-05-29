@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">  
+    
+<!-- Mirrored from www.starplugins.com/killercarousel/examples/html-items by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:27:32 GMT -->
+<head>
+        <title>Killer Carousel Example 1</title>
+       
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+        <!-- Include jQuery -->
+        <script type="text/javascript" src="../../sites/starplugins/js/jquery.js"></script>
+        <!-- Include KillerCarousel JavaScript -->
+        <script type="text/javascript" src="../../sites/starplugins/js/killercarousel/killercarouselb6f5.js?v=10"></script>
+        <!-- Include KillerCarousel CSS -->
+        <link href="../../sites/starplugins/js/killercarousel/killercarousel7b30.css?v=4" type="text/css" rel="stylesheet" />
+
+        
+        <!-- Various page styles. -->
+        <style type="text/css">
+           
+            body {
+                font-family: arial, sans-serif;
+                color: #444;
+                font-size: 16px;
+                padding:0px;
+                margin:0px;
+            }
+            
+            p {
+                line-height: 20px;
+            }
+            
+            code {
+                font-weight: bold;
+                color: #f44;;
+            }
+            a {
+                color:#3d8dde;
+            }
+            
+            #wrapper {
+                padding:10px;
+            }
+        </style>
+        
+        <!-- Styles for the Carousel -->
+        <style type = "text/css">
+
+            /* CSS for images inside item wrapper */
+            .kc-item img {
+                pointer-events: none;   /* Make images non-selectable. */
+                width:100%;             /* Make images expand to wrapper size (used in 2d modes). */
+            }
+            
+            
+            /* CSS for text at top and bottom of items */
+            .item-text-bot, .item-text-top {
+                position:absolute;
+                background-color:rgba(0,0,0,0.4);
+                font-family: georgia, serif;
+                color:#fff;
+                width:90%;
+                padding:5%;
+                height:auto;
+            }
+            .item-text-bot {
+                bottom:0px;
+            }
+
+            .item-text-top {
+                top:0px;
+            }
+         
+            
+            .item-canvas {
+                width:100%;
+                height:100%;
+                position:absolute;
+                top:0;
+                left:0;
+            }
+        </style>
+        
+        <script type = "text/javascript">
+            
+            // Function to generates a bunch of bouncing balls on canvas element.
+            var balls = function() {
+                var canvas = $('.item-canvas')[0],
+                    ballsTable = [],
+                    ctx,
+                    img = $('#canvas-image')[0];
+                if (!canvas || !canvas.getContext ) return
+                ctx = canvas.getContext('2d');
+                if(!ctx) return;
+                ctx.fillStyle = "rgb(255,255,255)";
+
+                var ball = function() {
+                    var x = Math.random()*188,
+                        y = Math.random()*250,
+                        dx = (Math.random()*4)-2,
+                        dy = (Math.random()*4)-2,
+                        radius = (Math.random()*10)+5;
+                    return {
+                        move: function() {
+                            x += dx;
+                            y += dy;
+                            if ( (dx<0 && x<0) || (dx>0 && x>188)) dx = -dx;
+                            if ( (dy<0 && y<0) || (dy>0 && y>250)) dy = -dy;
+
+                            ctx.beginPath();
+                            ctx.arc(x,y,radius,0,Math.PI*2,true);
+                            ctx.fill();
+                            ctx.closePath();
+                        }
+                    };
+                 };
+                for(var i=0;i<5;i++) ballsTable[i] = ball();
+                setInterval(
+                    function() {
+                          ctx.globalAlpha = 0.05;
+                    ctx.drawImage(img, 0, 0);
+                    ctx.globalAlpha = 1;
+                    for (var i = 0; i < ballsTable.length; i++)
+                        ballsTable[i].move();
+                }, 1000 / 60);
+            }
+            // End balls().
+            
+            
+            // Initialize carousel.
+            $(function() {
+                balls();
+                $('.kc-wrap').KillerCarousel({
+                    // Width of carousel.
+                    width: 800, 
+                    // Item spacing in 3d (CSS3 3d) mode.
+                    spacing3d: 120,    
+                    // Item spacing in 2d (no CSS3 3d) mode. 
+                    spacing2d:120,
+                    // Path to images for shadows etc.
+                    imagePath: "/sites/starplugins/js/killercarousel/",
+                    // Side shadows on.
+                    showShadow: true,
+                    showReflection:true,
+                    // Looping mode.
+                    infiniteLoop: true,
+                    // Scale at 75% of parent element.
+                    autoScale: 75
+                });
+            });
+    </script>
+        <script type="text/javascript">
+            
+             // The following piece of code can be ignored.
+             $(function(){
+                 $(window).resize(function() {
+                     $('#info').text("Page width: "+$(this).width());
+                 });
+                 $(window).trigger('resize');
+             });
+             
+            // The following piece of code can be ignored.
+            if (window.location.hostname.indexOf("starplugins.") != -1) {
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-254857-7']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            }
+             
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+        
+                 
+
+<h1>Killer Carousel Example: HTML carousel items</h1>
+<p>Carousel items don't have to be just images; you can add rich HTML content too.</p>
+<p>Scaling text works best on browsers that support CSS transforms. However, scaling text will still work on older browsers, but won't scale as smoothly.</p>
+<!--
+Salvator Mundi 1519
+St. John the Baptist 1516
+Lady with an Ermine 1490
+St. Jerome in the Wilderness 1480
+Head of a Woman 1508
+St. John the Baptist 1516
+The Virgin and Child with St Anne and St John the Baptist 1500
+Madonna of the Yarnwinder 1507
+The Virgin and Child with St. Anne 1508
+Madonna of the Carnation 1480
+La belle ferronnière 1496
+Adoration of the Magi 1481
+Portrait of a Musician 1490
+Virgin of the Rocks 1486
+Madonna of Laroque 1503
+Benois Madonna 1478
+Mona Lisa 1517
+Portrait of a man in red chalk 1512
+Ginevra de' Benci 1478
+The Last Supper 1498
+Annunciation 1475
+The Battle of Anghiari 1505
+Madonna Litta 1491
+-->
+<div class = "kc-wrap">
+    <!-- Carousel items follow. -->
+    <div class="kc-item">
+        <div class = "item-text-bot">Add HTML text, <br/><em>style as normal</em></div>
+        <img src="../../kcimages/cropped-small/image1.jpg" alt = "Salvator Mundi 1519">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image2.jpg" alt = "St. John the Baptist 1516">
+    </div> 
+
+    <div class="kc-item">
+        <canvas class = 'item-canvas' width='188' height='250'></canvas>
+        <div class = "item-text-bot">Canvas element</div>
+        <img id='canvas-image' src="../../kcimages/cropped-small/image3.jpg" alt = "Lady with an Ermine 1490">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image4.jpg" alt = "St. Jerome in the Wilderness 1480">
+    </div>
+
+    <div class="kc-item">
+        <div class = "item-text-bot">Add form elements<input type="text" /></div>
+        <img src="../../kcimages/cropped-small/image5.jpg" alt = "Head of a Woman 1508">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image6.jpg" alt = "St. John the Baptist 1516">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image7.jpg" alt = "The Virgin and Child with St Anne and St John the Baptist 1500">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image8.jpg" alt = "Madonna of the Yarnwinder 1507">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image9.jpg" alt = "The Virgin and Child with St. Anne 1508">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image10.jpg" alt = "Madonna of the Carnation 1480">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image11.jpg" alt = "La belle ferronnière 1496">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image12.jpg" alt = "Adoration of the Magi 1481">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image13.jpg" alt = "Portrait of a Musician 1490">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image14.jpg" alt = "Virgin of the Rocks 1486">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image15.jpg" alt = "Madonna of Laroque 1503">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image16.jpg" alt = "Benois Madonna 1478">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image17.jpg" alt = "Mona Lisa 1517">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image18.jpg" alt = "Portrait of a man in red chalk 1512">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image19.jpg" alt = "Ginevra de' Benci 1478">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image20.jpg" alt = "The Last Supper 1498">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image21.jpg" alt = "Annunciation 1475">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image22.jpg" alt = "The Battle of Anghiari 1505">
+    </div>
+
+    <div class="kc-item">
+        <img src="../../kcimages/cropped-small/image23.jpg" alt = "Madonna Litta 1491">
+    </div>
+
+</div>
+
+        <p id="info">info</p>
+        <p>&COPY;2015 <a href="../../index.html">Star Plugins</a></p>
+        </div>
+        
+    </body>
+
+<!-- Mirrored from www.starplugins.com/killercarousel/examples/html-items by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 16:27:32 GMT -->
+</html>
+
